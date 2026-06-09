@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão Suécia | Comunidade e Oportunidades</title>
+    
+    <meta name="description" content="Conectamos brasileiros e falantes de português a serviços, profissionais e oportunidades na Suécia. Participe do nosso grande Bolão!">
+    <meta name="keywords" content="brasileiros na suecia, morar na suecia, serviços em portugues suecia, bolao brasil suecia, comunidade brasileira escandinavia">
+    <meta name="robots" content="index, follow">
+    
+    <meta property="og:title" content="Conexão Suécia | Bolão & Diretório de Empresas">
+    <meta property="og:description" content="Encontre suporte em português e concorra a prêmios incríveis dos nossos parceiros fundadores.">
+    <meta property="og:type" content="website">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        // Google Analytics
+        // window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXX');
+
+        // Microsoft Clarity
+        // (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)},t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","PROJECT_ID");
+    </script>
+
+    <style>
+        /* DESIGN SYSTEM & CUSTOM PROPERTIES */
+        :root {
+            --nordic-dark: #060D1A;
+            --nordic-surface: #0E1A30;
+            --nordic-card: #162542;
+            --swe-blue: #006AA7;
+            --swe-yellow: #FFCD00;
+            --brazil-green: #00A859;
+            
+            --text-pure: #FFFFFF;
+            --text-muted: #94A3B8;
+            --text-dark: #0F172A;
+            
+            --border-glow: rgba(255, 205, 0, 0.15);
+            --border-soft: rgba(255, 255, 255, 0.06);
+            --smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* RESET & BASE CONFIGS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--nordic-dark);
+            color: var(--text-pure);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 90px 0;
+            position: relative;
+        }
+
+        .bg-surface {
+            background-color: var(--nordic-surface);
+        }
+
+        /* ELEMENTOS TIPOGRÁFICOS REUTILIZÁVEIS */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 56px auto;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: rgba(255, 205, 0, 0.08);
+            border: 1px solid rgba(255, 205, 0, 0.2);
+            color: var(--swe-yellow);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(28px, 5vw, 42px);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* MASTER CTA BUTTONS (UX CONVERSION DRIVEN) */
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 100%;
+        }
+
+        .btn-master {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 18px 36px;
+            font-size: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: var(--smooth);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-bolao {
+            background-color: var(--brazil-green);
+            color: var(--text-pure);
+            box-shadow: 0 8px 30px rgba(0, 168, 89, 0.3);
+            position: relative;
+            animation: pulseAttention 2.5s infinite;
+        }
+
+        .btn-bolao:hover {
+            transform: translateY(-3px);
+            background-color: #00BF63;
+            box-shadow: 0 12px 35px rgba(0, 168, 89, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-pure);
+            border: 1px solid var(--border-soft);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--swe-yellow);
+            color: var(--swe-yellow);
+            background: rgba(255, 205, 0, 0.02);
+        }
+
+        @keyframes pulseAttention {
+            0% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0.5); }
+            70% { box-shadow: 0 0 0 18px rgba(0, 168, 89, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 168, 89, 0); }
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(6, 13, 26, 0.75);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-soft);
+            transition: var(--smooth);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .brand {
+            font-size: 22px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-pure);
+            text-decoration: none;
+        }
+
+        .brand span { color: var(--swe-yellow); }
+
+        /* SEÇÃO 1 — HERO */
+        .hero {
+            padding-top: 180px;
+            padding-bottom: 110px;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 106, 167, 0.15) 0%, transparent 60%),
+                        radial-gradient(circle at 20% 80%, rgba(0, 168, 89, 0.06) 0%, transparent 60%);
+        }
+
+        .hero-inner {
+            max-width: 880px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-title-main {
+            font-size: clamp(42px, 8vw, 84px);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+
+        .hero-title-main span {
+            background: linear-gradient(135deg, var(--swe-yellow), #FFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle-sub {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-bottom: 24px;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-support-text {
+            font-size: 16px;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto 40px auto;
+        }
+
+        /* SEÇÃO 2 — COMO FUNCIONA */
+        .grid-steps {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: 1fr;
+        }
+
+        .step-wrapper {
+            background-color: var(--nordic-dark);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            padding: 40px 32px;
+            position: relative;
+            transition: var(--smooth);
+        }
+
+        .step-wrapper:hover {
+            border-color: rgba(255, 205, 0, 0.25);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .step-indicator {
+            font-size: 64px;
+            font-weight: 800;
+            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: absolute;
+            top: 16px;
+            right: 32px;
+            user-select: none;
+        }
+
+        .step-icon-box {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 205, 0, 0.05);
+            border: 1px solid rgba(255, 205, 0, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--swe-yellow);
+            margin-bottom: 24px;
+            font-size: 20px;
+        }
+
+        .step-wrapper h4 {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        /* SEÇÃO 3 — PRÊMIOS */
+        .grid-prizes {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: 1fr;
+        }
+
+        .prize-item-card {
+            background-color: var(--nordic-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--smooth);
+        }
+
+        .prize-item-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .prize-img-frame {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(45deg, var(--nordic-card), var(--nordic-surface));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.08);
+            font-size: 54px;
+            border-bottom: 1px solid var(--border-soft);
+        }
+
+        .prize-body {
+            padding: 28px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .prize-owner {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--swe-yellow);
+            margin-bottom: 8px;
+        }
+
+        .prize-name {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        /* SEÇÃO 4 — PARCEIROS FUNDADORES */
+        .scroller-filter {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding-bottom: 16px;
+            margin-bottom: 40px;
+            scrollbar-width: none;
+        }
+        .scroller-filter::-webkit-scrollbar { display: none; }
+
+        .filter-chip {
+            background-color: var(--nordic-dark);
+            border: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--smooth);
+        }
+
+        .filter-chip.active, .filter-chip:hover {
+            background-color: var(--swe-yellow);
+            color: var(--text-dark);
+            border-color: var(--swe-yellow);
+            transform: translateY(-1px);
+        }
+
+        .grid-directory {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1fr;
+        }
+
+        .dir-card {
+            background-color: var(--nordic-dark);
+            border: 1px solid var(--border-soft);
+            border-radius: 16px;
+            padding: 28px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: var(--smooth);
+        }
+
+        .dir-card:hover {
+            border-color: rgba(255,255,255,0.15);
+            transform: scale(1.01);
+        }
+
+        .dir-row-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .dir-info-main h3 { font-size: 19px; font-weight: 700; }
+        .dir-info-main p { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
+
+        .dir-tag-cat {
+            font-size: 11px;
+            font-weight: 700;
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 6px 14px;
+            border-radius: 100px;
+            border: 1px solid var(--border-soft);
+        }
+
+        .dir-actions-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .dir-btn-link {
+            font-size: 13px;
+            text-align: center;
+            padding: 11px;
+            border: 1px solid var(--border-soft);
+            border-radius: 8px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--smooth);
+        }
+
+        .dir-btn-link:hover { color: var(--text-pure); border-color: var(--text-pure); }
+
+        .dir-btn-action {
+            grid-column: span 2;
+            background-color: var(--nordic-card);
+            color: var(--text-pure);
+            text-align: center;
+            padding: 14px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid transparent;
+            transition: var(--smooth);
+        }
+        .dir-btn-action:hover { border-color: var(--swe-yellow); color: var(--swe-yellow); }
+
+        /* SEÇÃO 5 — CADASTRE SUA EMPRESA */
+        .cta-enclosure {
+            background: linear-gradient(145deg, #0E1A30 0%, #060D1A 100%);
+            border: 1px solid var(--border-soft);
+            border-radius: 32px;
+            padding: 64px 32px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* SEÇÃO 6 — SOBRE */
+        .about-block-text {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* SEÇÃO 7 — RODAPÉ */
+        footer {
+            border-top: 1px solid var(--border-soft);
+            padding: 80px 0 40px 0;
+            background-color: #040810;
+        }
+
+        .footer-grid-wrapper {
+            display: grid;
+            gap: 48px;
+            grid-template-columns: 1fr;
+            margin-bottom: 48px;
+        }
+
+        .ft-brand-side h4 { font-size: 20px; font-weight: 800; margin-bottom: 16px; }
+        .ft-brand-side p { font-size: 14px; color: var(--text-muted); max-width: 320px; }
+
+        .ft-nav-side h5, .ft-social-side h5 { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px; color: var(--text-muted); }
+        
+        .ft-nav-side ul { list-style: none; }
+        .ft-nav-side li { margin-bottom: 12px; }
+        .ft-nav-side a { color: var(--text-muted); text-decoration: none; font-size: 14px; transition: var(--smooth); }
+        .ft-nav-side a:hover { color: var(--text-pure); }
+
+        .social-row { display: flex; gap: 12px; }
+        .social-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background-color: var(--nordic-surface);
+            border: 1px solid var(--border-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--smooth);
+        }
+        .social-box:hover { background-color: var(--text-pure); color: var(--nordic-dark); }
+
+        .footer-disclaimer {
+            border-top: 1px solid var(--border-soft);
+            padding-top: 40px;
+            font-size: 13px;
+            color: rgba(148, 163, 184, 0.5);
+            line-height: 1.6;
+        }
+
+        /* MODAL DE CADASTRO */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(4, 8, 16, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-container {
+            background: var(--nordic-surface);
+            border: 1px solid var(--border-soft);
+            border-radius: 24px;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        .modal-overlay.active .modal-container {
+            transform: translateY(0);
+        }
+        .modal-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+            transition: var(--smooth);
+        }
+        .modal-close:hover { color: var(--text-pure); }
+        .modal-title { font-size: 24px; font-weight: 800; margin-bottom: 8px; }
+        .modal-desc { color: var(--text-muted); font-size: 14px; margin-bottom: 24px; }
+        .form-group { margin-bottom: 20px; }
+        .form-label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 8px; color: var(--text-pure); text-transform: uppercase; letter-spacing: 0.05em; }
+        .form-input { width: 100%; background: var(--nordic-dark); border: 1px solid var(--border-soft); padding: 14px 18px; border-radius: 10px; color: #FFF; font-family: inherit; font-size: 15px; transition: var(--smooth); }
+        .form-input:focus { border-color: var(--swe-yellow); }
+
+        /* MEDIA QUERIES PARA ADAPTAÇÃO TABLET & DESKTOP */
+        @media (min-width: 640px) {
+            .cta-group {
+                flex-direction: row;
+                width: auto;
+                justify-content: center;
+            }
+            .grid-steps { grid-template-columns: repeat(2, 1fr); }
+            .grid-prizes { grid-template-columns: repeat(2, 1fr); }
+            .grid-directory { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-steps { grid-template-columns: repeat(4, 1fr); }
+            .grid-prizes { grid-template-columns: repeat(3, 1fr); }
+            .grid-directory { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid-wrapper { grid-template-columns: 2fr 1fr 1fr; }
+            .cta-enclosure { padding: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="brand">Conexão<span>Suécia</span></a>
+            <a href="#bolao" class="btn-master btn-bolao" style="padding: 12px 24px; font-size: 12px;">⚽ Participar</a>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-inner">
+                <p class="section-badge">Campanha Bolão Brasil & Suécia</p>
+                <h1 class="hero-title-main">CONEXÃO <span>SUÉCIA</span></h1>
+                <h2 class="hero-subtitle-sub">Conectando pessoas, serviços e oportunidades em português na Suécia.</h2>
+                <p class="hero-support-text">Encontre profissionais, empresas e serviços que atendem em português e participe do Bolão Brasil & Suécia para concorrer a prêmios oferecidos pelos nossos parceiros.</p>
+                <div class="cta-group">
+                    <a href="https://link-do-dacopa-aqui.com" target="_blank" class="btn-master btn-bolao">⚽ Participar do Bolão</a>
+                    <a href="#parceiros" class="btn-master btn-outline">🔍 Conhecer Parceiros</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface" id="como-funciona">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Como funciona?</h2>
+                <p class="section-desc">Descubra como interagir com a plataforma, torcer no bolão e se conectar com a comunidade local.</p>
+            </div>
+            
+            <div class="grid-steps">
+                <div class="step-wrapper">
+                    <span class="step-indicator">01</span>
+                    <div class="step-icon-box"><i class="fa-solid fa-gavel"></i></div>
+                    <h4>Participe do Bolão Brasil & Suécia.</h4>
+                </div>
+                <div class="step-wrapper">
+                    <span class="step-indicator">02</span>
+                    <div class="step-icon-box"><i class="fa-solid fa-square-poll-vertical"></i></div>
+                    <h4>Acompanhe os resultados.</h4>
+                </div>
+                <div class="step-wrapper">
+                    <span class="step-indicator">03</span>
+                    <div class="step-icon-box"><i class="fa-solid fa-address-book"></i></div>
+                    <h4>Conheça empresas e profissionais da comunidade.</h4>
+                </div>
+                <div class="step-wrapper">
+                    <span class="step-indicator">04</span>
+                    <div class="step-icon-box"><i class="fa-solid fa-trophy"></i></div>
+                    <h4>Concorra aos prêmios oferecidos pelos parceiros.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="bolao">
+        <div class="container">
+            <div class="section-header">
+                <p class="section-badge">Recompensas Exclusivas</p>
+                <h2 class="section-title">Prêmios oferecidos pelos parceiros</h2>
+                <p class="section-desc">Entre no bolão e concorra a serviços e consultorias de alto valor estratégico para a sua jornada na Suécia.</p>
+            </div>
+            
+            <div class="grid-prizes">
+                <div class="prize-item-card">
+                    <div class="prize-img-frame"><i class="fa-solid fa-chart-pie"></i></div>
+                    <div class="prize-body">
+                        <p class="prize-owner">Estrategista Local</p>
+                        <h3 class="prize-name">Sessão estratégica de negócios</h3>
+                    </div>
+                </div>
+                <div class="prize-item-card">
+                    <div class="prize-img-frame"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <div class="prize-body">
+                        <p class="prize-owner">Svenska Hub</p>
+                        <h3 class="prize-name">Aula de sueco acadêmico</h3>
+                    </div>
+                </div>
+                <div class="prize-item-card">
+                    <div class="prize-img-frame"><i class="fa-solid fa-box-open"></i></div>
+                    <div class="prize-body">
+                        <p class="prize-owner">Empório BR</p>
+                        <h3 class="prize-name">Produtos típicos brasileiros</h3>
+                    </div>
+                </div>
+                <div class="prize-item-card">
+                    <div class="prize-img-frame"><i class="fa-solid fa-scissors"></i></div>
+                    <div class="prize-body">
+                        <p class="prize-owner">Estética Stockholm</p>
+                        <h3 class="prize-name">Serviços de beleza e bem-estar</h3>
+                    </div>
+                </div>
+                <div class="prize-item-card">
+                    <div class="prize-img-frame"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div class="prize-body">
+                        <p class="prize-owner">Nordic Coach</p>
+                        <h3 class="prize-name">Treino personalizado focado</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface" id="parceiros">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Parceiros Fundadores</h2>
+                <p class="section-desc">Estas empresas fazem parte da primeira edição do Conexão Suécia e apoiam diretamente a nossa rede.</p>
+            </div>
+            
+            <div class="scroller-filter">
+                <button class="filter-chip active" onclick="filterCategory('all', this)">📍 Todos</button>
+                <button class="filter-chip" onclick="filterCategory('Alimentação', this)">🍞 Alimentação</button>
+                <button class="filter-chip" onclick="filterCategory('Beleza', this)">💄 Beleza</button>
+                <button class="filter-chip" onclick="filterCategory('Saúde', this)">🩺 Saúde</button>
+                <button class="filter-chip" onclick="filterCategory('Negócios', this)">💼 Negócios</button>
+                <button class="filter-chip" onclick="filterCategory('Limpeza', this)">🧹 Limpeza</button>
+                <button class="filter-chip" onclick="filterCategory('Cursos', this)">📚 Cursos e Idiomas</button>
+                <button class="filter-chip" onclick="filterCategory('Turismo', this)">✈️ Turismo e Bem-estar</button>
+            </div>
+
+            <div class="grid-directory" id="directory-grid">
+                <div class="dir-card" data-cat="Alimentação">
+                    <div class="dir-row-top">
+                        <div class="dir-info-main">
+                            <h3>Sabor da Terra Sthlm</h3>
+                            <p><i class="fa-solid fa-map-pin"></i> Estocolmo</p>
+                        </div>
+                        <span class="dir-tag-cat">🍞 Alimentação</span>
+                    </div>
+                    <div class="dir-actions-group">
+                        <a href="#" class="dir-btn-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="#" class="dir-btn-link"><i class="fa-solid fa-globe"></i> Site</a>
+                        <a href="mailto:contato@exemplo.com" class="dir-btn-action">Contato</a>
+                    </div>
+                </div>
+                <div class="dir-card" data-cat="Beleza">
+                    <div class="dir-row-top">
+                        <div class="dir-info-main">
+                            <h3>Glow Studio</h3>
+                            <p><i class="fa-solid fa-map-pin"></i> Gotemburgo</p>
+                        </div>
+                        <span class="dir-tag-cat">💄 Beleza</span>
+                    </div>
+                    <div class="dir-actions-group">
+                        <a href="#" class="dir-btn-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="#" class="dir-btn-link"><i class="fa-solid fa-globe"></i> Site</a>
+                        <a href="mailto:contato@exemplo.com" class="dir-btn-action">Contato</a>
+                    </div>
+                </div>
+                <div class="dir-card" data-cat="Negócios">
+                    <div class="dir-row-top">
+                        <div class="dir-info-main">
+                            <h3>Nordic Consultoria</h3>
+                            <p><i class="fa-solid fa-map-pin"></i> Malmö</p>
+                        </div>
+                        <span class="dir-tag-cat">💼 Negócios</span>
+                    </div>
+                    <div class="dir-actions-group">
+                        <a href="#" class="dir-btn-link"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="#" class="dir-btn-link"><i class="fa-solid fa-globe"></i> Site</a>
+                        <a href="mailto:contato@exemplo.com" class="dir-btn-action">Contato</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cadastro">
+        <div class="container">
+            <div class="cta-enclosure">
+                <h2 class="section-title">Faça parte da comunidade</h2>
+                <p class="section-desc" style="max-width: 580px; margin: 0 auto 32px auto;">Deseja divulgar seu negócio para brasileiros e falantes de português na Suécia? Cadastre gratuitamente sua empresa.</p>
+                <button class="btn-master btn-bolao" onclick="openModalCadastro()">Cadastrar Empresa</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-surface" id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre o Conexão Suécia</h2>
+            </div>
+            <p class="about-block-text">O Conexão Suécia nasceu para conectar brasileiros e falantes de português a serviços, profissionais e oportunidades em toda a Suécia. Nosso objetivo é fortalecer a comunidade, facilitar conexões e dar visibilidade a empresas que atendem em português.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid-wrapper">
+                <div class="ft-brand-side">
+                    <h4>CONEXÃO SUÉCIA</h4>
+                    <p>O ecossistema oficial de integração, negócios e parcerias para a comunidade de língua portuguesa em território sueco.</p>
+                </div>
+                <div class="ft-nav-side">
+                    <h5>Links</h5>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#bolao">Bolão</a></li>
+                        <li><a href="#parceiros">Parceiros</a></li>
+                        <li><a href="#cadastro">Cadastro</a></li>
+                    </ul>
+                </div>
+                <div class="ft-social-side">
+                    <h5>Redes & Contato</h5>
+                    <div class="social-row" style="margin-bottom: 20px;">
+                        <a href="#" class="social-box"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="mailto:contato@conexaosuecia.com" class="social-box"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                    <p style="font-size: 14px; color: var(--text-muted);">contato@conexaosuecia.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-disclaimer">
+                <p>Aviso legal: O Conexão Suécia atua apenas como plataforma de divulgação. A contratação e a prestação do serviço são de responsabilidade direta entre cliente e fornecedor.</p>
+                <p style="margin-top: 24px; opacity: 0.4;">&copy; 2026 Conexão Suécia. Todos os direitos de propriedade reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- INTERFACE MODAL NATIVA -->
+    <div class="modal-overlay" id="registrationModal" onclick="closeModalCadastro(event)">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModalCadastro(null)">&times;</button>
+            <h3 class="modal-title">Cadastre sua Empresa</h3>
+            <p class="modal-desc">Insira as informações do seu negócio para fazer parte do nosso ecossistema.</p>
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-group">
+                    <label class="form-label">Nome do Negócio</label>
+                    <input type="text" class="form-input" required placeholder="Ex: Sabor da Terra Sthlm">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">E-mail de Contato</label>
+                    <input type="email" class="form-input" required placeholder="seu@email.com">
+                </div>
+                <button type="submit" class="btn-master btn-bolao" style="width: 100%; padding: 14px;">Enviar Cadastro</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function filterCategory(category, element) {
+            const chips = document.querySelectorAll('.filter-chip');
+            chips.forEach(chip => chip.classList.remove('active'));
+            element.classList.add('active');
+
+            const cards = document.querySelectorAll('.dir-card');
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-cat');
+                if(category === 'all' || cardCat === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function openModalCadastro() {
+            document.getElementById('registrationModal').classList.add('active');
+        }
+
+        function closeModalCadastro(event) {
+            document.getElementById('registrationModal').classList.remove('active');
+        }
+
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            alert("Obrigado pelo interesse! Integre aqui o endpoint do seu Typeform, Google Forms ou webhook dedicado.");
+            closeModalCadastro();
+        }
+    </script>
+</body>
+</html>
